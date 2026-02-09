@@ -102,8 +102,15 @@ function selectMethod(method) {
             <p style="color: #1eb41e; font-weight: bold; font-size: 18px; margin-bottom: 20px;"> EasyPaisa Details</p>
             <p class="info-label">Account Name:</p>
             <p class="info-value">NIGHAT SHAHEEN</p>
-            <p class="info-label">Account Number:</p>
-            <p class="info-value" style="font-size: 26px; color: #1eb41e;">03114989068</p>
+            <p class="info-label">Account IBAN Number copy:</p>
+            <p class="info-value" style="font-size: 26px; color: ; display: flex; align-items: center; gap: 10px;">
+    <span id="ep-num">PK45TMFB00000
+    00031529183</span>
+    
+    
+
+            
+            <p class="info-value" style="font-size: 26px; color: #1eb41e;"></p>
         `;
     } else {
         jcCard.classList.add('active-jc');
@@ -111,15 +118,38 @@ function selectMethod(method) {
             <p style="color: #ff0000; font-weight: bold; font-size: 18px; margin-bottom: 20px;"> JazzCash Details</p>
             <p class="info-label">Account Name:</p>
             <p class="info-value">NIGHAT SHAHEEN</p>
-            <p class="info-label">Account Number:</p>
-            <p class="info-value" style="font-size: 26px; color: #ff0000;">03068176690</p>
+            <p class="info-label">Account IBAN Number copy:</p>
+            <p class="info-value" style="font-size: 26px; color: ;">PK06JCMA14029
+            23068176690</p>
         `;
     }
 
     // Scroll effect
     window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
+
+// Ye function error khatam kar dega
+function copyNum(id) {
+    // Number ko select karna
+    var numText = document.getElementById(id).innerText;
+    
+    // Clipboard mein copy karna
+    navigator.clipboard.writeText(numText).then(function() {
+        // Copy hone ke baad chota sa alert ya feedback
+        alert("Copied: " + numText);
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+    });
+}
+
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
